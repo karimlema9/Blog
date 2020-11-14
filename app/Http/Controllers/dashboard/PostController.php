@@ -40,7 +40,7 @@ class PostController extends Controller
 
         Post::create($request->validated());
 
-        echo "hola ".$request->title;
+        return back()->with('status', 'Post creado con exito!');
     }
 
     /**

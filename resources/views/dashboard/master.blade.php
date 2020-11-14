@@ -8,7 +8,11 @@
     <title>Modulo admin</title>
 </head>
 <body>
+
+@include('dashboard.partials.nav_header_menu')
+
     <div class="container">
+@include('dashboard.partials.session_status')
         @yield('content')
     </div>
 </body>
