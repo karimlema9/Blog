@@ -16,3 +16,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('dashboard/post', 'dashboard\PostController');
+Route::resource('dashboard/category', 'dashboard\CategoryController');
