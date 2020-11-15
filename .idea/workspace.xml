@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ca5b739b-371b-43ee-ae87-6b51eb1e457d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +127,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -135,8 +138,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\Blog\app\Http\Requests" />
       <recent name="C:\laragon\www\Blog\resources\views\dashboard" />
+      <recent name="C:\laragon\www\Blog\app\Http\Requests" />
       <recent name="C:\laragon\www\Blog\app" />
       <recent name="C:\laragon\www\Blog\app\Http\Controllers\dashboard" />
       <recent name="C:\laragon\www\Blog\resources\views\dashboard\post" />
@@ -169,6 +172,8 @@
       <workItem from="1605384045272" duration="46000" />
       <workItem from="1605384104836" duration="3123000" />
       <workItem from="1605387323794" duration="3358000" />
+      <workItem from="1605440632555" duration="3526000" />
+      <workItem from="1605444252595" duration="807000" />
     </task>
     <servers />
   </component>
@@ -176,6 +181,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="591" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605443927795">
+      <screen x="0" y="0" width="1723" height="834" />
+    </state>
+    <state x="591" y="171" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1723.834@0.0.1723.834" timestamp="1605443927795" />
     <state x="641" y="171" key="FileChooserDialogImpl" timestamp="1605384042505">
       <screen x="0" y="0" width="1723" height="834" />
     </state>
@@ -188,9 +197,9 @@
       <screen x="0" y="0" width="1723" height="834" />
     </state>
     <state x="569" y="0" width="585" height="834" key="find.popup/0.0.1723.834@0.0.1723.834" timestamp="1605385527941" />
-    <state x="524" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605389256827">
+    <state x="524" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605443311387">
       <screen x="0" y="0" width="1723" height="834" />
     </state>
-    <state x="524" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1723.834@0.0.1723.834" timestamp="1605389256827" />
+    <state x="524" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1723.834@0.0.1723.834" timestamp="1605443311387" />
   </component>
 </project>

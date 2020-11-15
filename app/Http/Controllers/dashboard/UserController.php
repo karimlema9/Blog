@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCategoryPost;
-use App\Category;
+use App\Http\Requests\StoreUserPost;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
-
     public function __construct()
     {
 
@@ -24,9 +24,9 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categorys = Category::orderBy('created_at', 'desc')->paginate(10);
+        $users = User::orderBy('created_at', 'desc')->paginate(10);
 
-        return view("dashboard.category.index",['categorys' => $categorys]);
+        return view("dashboard.user.index",['users' => $users]);
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view("dashboard.category.create",['category' => new Category() ]);
+        return view("dashboard.user.create",['user' => new User() ]);
     }
 
     /**
@@ -45,12 +45,18 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryPost $request)
+    public function store(StoreUserPost $request)
     {
 
-        Category::create($request->validated());
+        User::create([
+            'name' => $request['name'],
+            'rol_id' => 2,
+            'surname' => $request['surname'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
 
-        return back()->with('status', 'Categoria creado con exito!');
+        return back()->with('status', 'Usuario creado con exito!');
     }
 
     /**
@@ -59,10 +65,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(User $user)
     {
 
-            return view('dashboard.category.show', ['category' => $category]);
+        return view('dashboard.user.show', ['user' => $user]);
 
     }
 
@@ -72,9 +78,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(User $user)
     {
-        return view('dashboard.category.edit', ['category' => $category]);
+        return view('dashboard.user.edit', ['user' => $user]);
     }
 
     /**
@@ -84,11 +90,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreCategoryPost $request, Category $category)
+    public function update(StoreUserPost $request, User $user)
     {
-        $category->update($request->validated());
+        $user->update([
+            'name' => $request['name'],
+            'surname' => $request['surname'],
+            'email' => $request['email'],
+        ]);
 
-        return back()->with('status', 'Categoria actualizado con exito!');
+        return back()->with('status', 'Usuario actualizado con exito!');
     }
 
     /**
@@ -97,10 +107,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(User $user)
     {
-        $category->delete();
+        $user->delete();
 
-        return back()->with('status', 'Categoria eliminado con exito!');
+        return back()->with('status', 'Usuario eliminado con exito!');
     }
 }
