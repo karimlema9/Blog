@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\dashboard;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostPost;
 use App\Post;
+use App\PostImage;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -29,7 +31,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("dashboard.post.create",['post' => new Post() ]);
+        $categorys = Category::pluck('id', 'title');
+        return view("dashboard.post.create",['post' => new Post(), 'categorys' => $categorys]);
     }
 
     /**
@@ -67,7 +70,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.post.edit', ['post' => $post]);
+        $categorys = Category::pluck('id', 'title');
+        return view('dashboard.post.edit', ['post' => $post, 'categorys' => $categorys]);
     }
 
     /**
@@ -82,6 +86,22 @@ class PostController extends Controller
         $post->update($request->validated());
 
         return back()->with('status', 'Post actualizado con exito!');
+    }
+
+    public function image(Request $request, Post $post)
+    {
+
+        $request->validate([
+           'image' => 'required|mimes:jpeg,bmp,png|max:10240'
+        ]);
+
+        $filname = time() . "." . $request->image->extension();
+
+        $request->image->move(public_path('images'),$filname);
+
+        PostImage::create(['image' => $filname, 'post_id' => $post->id]);
+        return back()->with('status', 'Imagen cargada con exito!');
+
     }
 
     /**

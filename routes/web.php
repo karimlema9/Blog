@@ -16,4 +16,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('dashboard/post', 'dashboard\PostController');
+Route::post('dashboard/post/{post}/image', 'dashboard\PostController@image')->name('post.image');
+
 Route::resource('dashboard/category', 'dashboard\CategoryController');
+
