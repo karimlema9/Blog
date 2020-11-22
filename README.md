@@ -1,3 +1,7 @@
+# Blog v.01
+<p>Blog is a web application made with laravel, basically its function as its name says is to be a blog where the administrator can perform the CRUD of users, posts and categories and validate all of it.
+   It consists of two parts: the administrator part and the user part that will be done with vue.js + bootstrap where you can register and upload your post.</p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
